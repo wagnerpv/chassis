@@ -1,0 +1,115 @@
+/* -------------------------------------------------------------------- 
+   The grid
+   --------
+   Default mobile: Simple two column fluid grid for mobile.
+   Desktop/tablet: Simple twelve column fluid grid.
+   -------------------------------------------------------------------- */
+
+.container {
+  margin: 0 auto;
+  padding: 0 2%;
+}
+.col-group {
+  width: 100%;
+}
+[class*="column"] {
+  padding: 0 2%;
+  float: left;
+}
+.column-1 { width: 50%; }
+.column-2 { width: 100%; }
+
+/* Offsets */
+.offset-1 { margin-left: 50%; }
+
+
+/* -------------------------------------------------------------------- 
+   Tablet to desktop
+   -------------------------------------------------------------------- */
+
+ @media screen and (min-width: 768px) {
+  .container {
+    max-width: 940px;
+    padding: 0;
+  }
+  [class*="column"] {
+    padding: 0 1%;
+  }
+
+  /* Override the mobile grid */
+  .column-1 { width: 50%; }
+  .column-2 { width: 100%; }
+
+  /* Twelve column fluid grid */
+  .lg-column-1  { width: 8.333%; }
+  .lg-column-2  { width: 16.666%; }
+  .lg-column-3  { width: 25%; }
+  .lg-column-4  { width: 33.333%; }
+  .lg-column-5  { width: 41.666%; }
+  .lg-column-6  { width: 50%; }
+  .lg-column-7  { width: 58.333%; }
+  .lg-column-8  { width: 66.666%; }
+  .lg-column-9  { width: 75%; }
+  .lg-column-10 { width: 83.333%; }
+  .lg-column-11 { width: 91.666%; }
+  .lg-column-12 { width: 100%; }
+
+  /* Offsets */
+  .lg-offset-1     { margin-left: 8.333%; }
+  .lg-offset-2     { margin-left: 16.666%; }
+  .lg-offset-3     { margin-left: 25%; }
+  .lg-offset-4     { margin-left: 33.333%; }
+  .lg-offset-5     { margin-left: 41.666%; }
+  .lg-offset-6     { margin-left: 50%; }
+  .lg-offset-7     { margin-left: 58.333%; }
+  .lg-offset-8     { margin-left: 66.666%; }
+  .lg-offset-9     { margin-left: 75%; }
+  .lg-offset-10    { margin-left: 83.333%; }
+  .lg-offset-11    { margin-left: 91.666%; }
+}
+
+
+/* -------------------------------------------------------------------- 
+   Standard sized screens to large screens
+   -------------------------------------------------------------------- */
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+  [class*="column"] {
+    padding: 0 1.5%;
+  }
+}
+
+
+/* -------------------------------------------------------------------- 
+   Clear all the things! Thanks @necolas.
+   -------------------------------------------------------------------- */
+
+.col-group,
+.clearfix {
+  *zoom: 1;
+}
+.col-group:before,
+.col-group:after,
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.col-group:after,
+.clearfix:after {
+  clear: both;
+}
+
+/* You can also use a <br class="clear"> to clear columns */
+.clear {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  clear: both;
+}
