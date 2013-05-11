@@ -13,7 +13,6 @@
 
 /* Use box sizing on all the things! */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
 article,
 aside,
 details,
@@ -38,9 +37,8 @@ audio:not([controls]) {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Base styles
-   -------------------------------------------------------------------- */
+/* Base styles 
+------------------------------- */
 
 html {
   font-family: sans-serif;
@@ -64,10 +62,9 @@ a:hover {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Typography
-   -------------------------------------------------------------------- */
-   
+/* Typography 
+------------------------------- */
+
 h1, h2, h3, h4, h5, h6 { margin: 10px 0; }
 h1, h2, h3 { line-height: 1.1; }
 
@@ -143,9 +140,8 @@ sub {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Embedded content
-   -------------------------------------------------------------------- */
+/* Embedded content 
+------------------------------- */
 
 img {
   max-width: 100%;
@@ -157,18 +153,16 @@ svg:not(:root) {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Figures
-   -------------------------------------------------------------------- */
+/* Figures 
+------------------------------- */
 
 figure {
   margin: 0;
 }
 
 
-/* -------------------------------------------------------------------- 
-   Forms
-   -------------------------------------------------------------------- */
+/* Forms 
+------------------------------- */
 
 fieldset {
   margin: 0 2px;
@@ -220,18 +214,16 @@ textarea {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Tables
-   -------------------------------------------------------------------- */
+/* Tables 
+------------------------------- */
 
 table {
   border-spacing: 0;
 }
 
 
-/* -------------------------------------------------------------------- 
-   Misc
-   -------------------------------------------------------------------- */
+/* Misc 
+------------------------------- */
 
 hr {
   margin: 10px 0;
@@ -241,9 +233,8 @@ hr {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Responsive classes
-   -------------------------------------------------------------------- */
+/* Responsive classes 
+------------------------------- */
 
 .show-mobile  { display: inherit !important; }
 .hide-mobile  { display: none; }
@@ -269,22 +260,25 @@ hr {
   padding: 0 2%;
 }
 .column-group {
-  width: 100%;
+  width: auto;
 }
 .column {
-  padding: 0 2%;
+  padding: 0 15px;
   float: left;
 }
-.unit-1 { width: 50%; }
-.unit-2 { width: 100%; }
+/* Lines nested grids up correctly. */
+.column .column-group {
+  margin: 0 -15px;
+}
+.units-1 { width: 50%; }
+.units-2 { width: 100%; }
 
 /* Offsets */
 .offset-1 { margin-left: 50%; }
 
 
-/* -------------------------------------------------------------------- 
-   Tablet to desktop
-   -------------------------------------------------------------------- */
+/* Tablet to desktop 
+------------------------------- */
 
  @media screen and (min-width: 768px) {
   .container {
@@ -292,26 +286,30 @@ hr {
     padding: 0;
   }
   .column {
-    padding: 0 1%;
+    padding: 0 20px;
+  }
+  /* Lines nested grids up correctly. */
+  .column .column-group {
+    margin: 0 -20px;
   }
 
   /* Override the mobile grid */
-  .unit-1 { width: 50%; }
-  .unit-2 { width: 100%; }
+  .units-1 { width: 50%; }
+  .units-2 { width: 100%; }
 
   /* Twelve column fluid grid */
-  .lg-unit-1  { width: 8.333%; }
-  .lg-unit-2  { width: 16.666%; }
-  .lg-unit-3  { width: 25%; }
-  .lg-unit-4  { width: 33.333%; }
-  .lg-unit-5  { width: 41.666%; }
-  .lg-unit-6  { width: 50%; }
-  .lg-unit-7  { width: 58.333%; }
-  .lg-unit-8  { width: 66.666%; }
-  .lg-unit-9  { width: 75%; }
-  .lg-unit-10 { width: 83.333%; }
-  .lg-unit-11 { width: 91.666%; }
-  .lg-unit-12 { width: 100%; }
+  .lg-units-1  { width: 8.333%; }
+  .lg-units-2  { width: 16.666%; }
+  .lg-units-3  { width: 25%; }
+  .lg-units-4  { width: 33.333%; }
+  .lg-units-5  { width: 41.666%; }
+  .lg-units-6  { width: 50%; }
+  .lg-units-7  { width: 58.333%; }
+  .lg-units-8  { width: 66.666%; }
+  .lg-units-9  { width: 75%; }
+  .lg-units-10 { width: 83.333%; }
+  .lg-units-11 { width: 91.666%; }
+  .lg-units-12 { width: 100%; }
 
   /* Offsets */
   .lg-offset-1     { margin-left: 8.333%; }
@@ -328,23 +326,25 @@ hr {
 }
 
 
-/* -------------------------------------------------------------------- 
-   Standard sized screens to large screens
-   -------------------------------------------------------------------- */
+/* Standard sized screens to large screens 
+------------------------------------------ */
 
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1170px;
   }
   .column {
-    padding: 0 1.5%;
+    padding: 0 30px;
+  }
+  /* Lines nested grids up correctly. */
+  .column .column-group {
+    margin: 0 -30px;
   }
 }
 
 
-/* -------------------------------------------------------------------- 
-   Clear all the things! Thanks @necolas.
-   -------------------------------------------------------------------- */
+/* Clear all the things! Thanks @necolas. 
+----------------------------------------- */
 
 .column-group,
 .clearfix {
@@ -362,7 +362,6 @@ hr {
 .clearfix:after {
   clear: both;
 }
-
 /* You can also use a <br class="clear"> to clear columns */
 .clear {
   display: block;
@@ -397,7 +396,7 @@ hr {
 .button-large,
 .button-block {
   padding: 14px 20px;
-  font-size: 22px;
+  font-size: 20px;
 }
 .button-block {
   display: block;
@@ -432,8 +431,7 @@ hr {
   cursor: default;
 }
 
-
-/* Thanks to pnull */
+/* Icon classes thanks to pnull */
 .icon.phone:before{ content:'\1F4DE'; }
 .icon.mobile:before{ content:'\1F4F1'; }
 .icon.mouse:before{ content:'\E789'; }
